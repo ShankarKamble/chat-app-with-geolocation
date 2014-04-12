@@ -14,6 +14,7 @@
         "express": "latest",
         "jade": "latest",
         "mongoose": "latest",
+        "mean-logger": "latest",
         "connect-mongo": "latest",
         "connect-flash": "latest",
         "crypto": "latest",
