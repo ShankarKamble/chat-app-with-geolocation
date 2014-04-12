@@ -1,0 +1,28 @@
+
+<section data-ng-controller="DealDecksController" data-ng-init="getAllDealDecks()">
+    Search : <input type="text" ng-model="search">
+     <table class="table table-striped table-bordered">
+        <thead>
+        <tr >
+           <th width="15%">Created By</td>
+        
+           <th  width="60%">Config</td>
+        
+            <th  width="10%">Percentage</td>
+        
+           <th  width="20%">Created Date</td>
+        </tr>
+
+        </thead>
+           <tbody  >
+            <tr data-ng-repeat="DealDeck in DealDecks | filter:search"> 
+                <td  width="10%">{{DealDeck.user.name}}</td>
+                <td  width="60%">{{DealDeck.config}}</td>
+                <td  width="10%" > <b>{{DealDeck.percentage}}</b></td>
+                 <td  width="20%">{{DealDeck.created | date:'medium'}}</td>
+            </tr>
+            </tbody>
+        </table>
+</section>
+
+

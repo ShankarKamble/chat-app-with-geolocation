@@ -1,0 +1,7 @@
+{
+    "db": "mongodb://localhost/dealdeck-travis",
+    "port": 3001,
+    "app": {
+        "name": ""Deal Deck (Shankar Kamble)"
+    }
+}

@@ -1,0 +1,7 @@
+h1 {
+    text-align:center
+}
+
+ul.DealDecks li:not(:last-child) {
+    border-bottom:1px solid #ccc
+}

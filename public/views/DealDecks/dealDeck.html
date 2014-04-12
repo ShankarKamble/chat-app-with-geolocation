@@ -1,0 +1,39 @@
+<section data-ng-controller="DealDecksController" >
+       <div>
+            <input type="button" id="shuffle" value="Shuffle" data-ng-click="shuffleDecks()"/>
+            <input type="button" id="deal"value="Deal" data-ng-click="dealDecks();"/>
+              Percenatge:-<b> {{percentage}}  </b>    
+        </div>
+                   <table ng-show ="Load()" class="table table-striped table-bordered">
+		          	 <tbody  >
+					    <tr  ng-repeat="p in decks track by $index">
+					        <td >{{ p }} </td>
+					    </tr>
+					   </tbody>
+	         	   </table>
+
+		          <table ng-hide ="Load()" class="table table-striped table-bordered">
+		          	 <tbody  >
+		          	 	<tr >
+					    	 <td></td>
+					        <td class = "output"  ng-repeat="deck in decksValues track by $index">{{ deck }}</td>
+					    </tr>
+					    <tr >
+					    	 <td>Spades</td>
+					        <td class = "output"  ng-repeat="p in spades track by $index">{{ p }}</td>
+					    </tr>
+					    <tr  >
+					    	 <td>Clubs</td>
+					        <td   ng-repeat="p in clubs track by $index" >{{ p }}</td>
+					    </tr>
+					    <tr  >
+					    	<td>Diamonds</td>
+					        <td  ng-repeat="p in diamonds track by $index">{{ p }}</td>
+					    </tr >
+					    <tr >
+					    	<td>Hearts</td>
+					        <td  ng-repeat="p in hearts track by $index">{{ p }}</td>
+					    </tr>
+					    </tbody>
+	         	</table>
+</section>
