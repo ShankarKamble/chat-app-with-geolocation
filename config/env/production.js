@@ -1,6 +1,7 @@
 module.exports = {
-    db: "mongodb://localhost/dealdeck",
+     db: "mongodb://shankar:shanrenu1008!))*@kahana.mongohq.com:10042/app24052438",
     app: {
-        name: "Deal Deck (Shankar Kamble)"
+        name: "User Chat (Shankar Kamble)"
     }
+
 }

@@ -21,11 +21,11 @@ exports.user = {
 };
 
 /**
- * DealDecks authorizations routing middleware
+ * User authorizations routing middleware
  */
-exports.DealDecks = {
+exports.User = {
     hasAuthorization: function(req, res, next) {
-        if (req.DealDecks.user.id != req.user.id) {
+        if (req.User.user.id != req.user.id) {
             return res.send(401, 'User is not authorized');
         }
         next();

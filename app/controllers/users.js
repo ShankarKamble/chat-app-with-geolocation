@@ -2,7 +2,8 @@
  * Module dependencies.
  */
 var mongoose = require('mongoose'),
-    User = mongoose.model('User');
+    User = mongoose.model('User'),
+    _ = require('underscore');
 
 /**
  * Auth callback
@@ -35,6 +36,8 @@ exports.signup = function(req, res) {
  * Logout
  */
 exports.signout = function(req, res) {
+    req.user.online = false;
+    exports.update(req.user)
     req.logout();
     res.redirect('/');
 };
@@ -43,7 +46,9 @@ exports.signout = function(req, res) {
  * Session
  */
 exports.session = function(req, res) {
-    res.redirect('/#!/DealDecks');
+    req.user.online = true;
+    exports.update(req.user)
+    res.redirect('/#!/User');
 };
 
 /**
@@ -52,7 +57,7 @@ exports.session = function(req, res) {
 exports.create = function(req, res) {
     var user = new User(req.body);
     var message = null;
-
+    user.online = true;
     user.provider = 'local';
     user.save(function(err) {
         if (err) {
@@ -61,7 +66,7 @@ exports.create = function(req, res) {
                 case 11001:
                     message = 'Username already exists';
                     break;
-                default: 
+                default:
                     message = 'Please fill all the required fields';
             }
 
@@ -72,7 +77,7 @@ exports.create = function(req, res) {
         }
         req.logIn(user, function(err) {
             if (err) return next(err);
-            return res.redirect('/');
+            return res.redirect('/#!/User');
         });
     });
 };
@@ -98,4 +103,51 @@ exports.user = function(req, res, next, id) {
             req.profile = user;
             next();
         });
+};
+
+/**
+ * List of User
+ */
+exports.all = function(req, res) {
+    User.find().exec(function(err, UserChats) {
+        if (err) {
+            res.render('error', {
+                status: 500
+            });
+        } else {
+            res.jsonp(UserChats);
+        }
+    });
+};
+
+/**
+ * Update a User
+ */
+exports.update = function(user) {
+    user = _.extend(User,user);
+    user.save(function(err) {
+        //res.jsonp(user);
+    });
+};
+
+/**
+ * Update a User
+ */
+exports.updateUser = function(req, res) {
+    var user = req.body.user;
+    var userupdate = req.user;
+    userupdate.lat = user.lat;
+    userupdate.longt = user.longt;
+    userupdate.online = true;
+
+    userupdate.name = "Test user";
+    userupdate.username = "test";
+    userupdate.email = "testuser@gmail.com";
+
+    user = _.extend(User,userupdate);
+    user.save(function(err) {
+        //res.jsonp(user);
+    });
+
+
 };

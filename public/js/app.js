@@ -1,4 +1,4 @@
-angular.module('mean', ['ngCookies', 'ngResource', 'ngRoute', 'ui.bootstrap', 'ui.route', 'dealdeck.system', 'dealdeck.DealDecks']);
+angular.module('mean', ['ngCookies', 'ngResource', 'ngRoute', 'ui.bootstrap', 'ui.route', 'UserChat.system', 'UserChat.User']);
 
-angular.module('dealdeck.system', []);
-angular.module('dealdeck.DealDecks', []);
+angular.module('UserChat.system', []);
+angular.module('UserChat.User', []);

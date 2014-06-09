@@ -1,0 +1,63 @@
+
+<section data-ng-controller="UserChatsController" data-ng-init="getAllUsers()">
+    Search : <input type="text" ng-model="search">
+     <table class="table table-striped table-bordered">
+        <thead>
+        <tr >
+           <th >Name</td>
+
+           <th >Username</td>
+
+          <th >Email</td>
+           <th >Status</td>
+        </tr>
+
+        </thead>
+           <tbody  >
+            <tr data-ng-repeat="User in Users | filter:search">
+                <td  >{{User.name}}</td>
+                <td >{{User.username}}</td>
+                <td > {{User.email}}</td>
+                 <td > <a  class="btn btn-primary btn-small" ng-show = " User.online || User.name === $scope.global.user.name" ng-click=" setToUser(User.name)">Online</a>
+                  <a  class="btn btn-danger btn-small" ng-show = " !User.online" ng-click=" setToUser(User.name)">Offline</a></td>
+            </tr>
+            </tbody>
+
+
+        </table>
+<a  class="btn btn-success" ng-click="getLocation()">Get Location</a>
+ <div class="row" ng-show="!showResult()">
+                Error : {{error}}
+                Error Code: {{error.code}}
+            </div>
+<br/><br/>
+        <div id="map"></div>
+                <div id="class" ng-repeat="marker in markers | orderBy : 'title' "
+                ui-map-marker="markers[$index]"
+                      ui-event="{'map-click': 'setToUser(marker.title)'} ">
+
+    </div>
+
+
+
+<div id="example" class="modal fade in" ng-show ="isUserPresent == true">
+
+<div class="modal-body">
+
+<p ng-repeat='message in messages',
+      ng-class='{alert: message.user == "alert"}'>
+       {{message.user}}: {{message.text}}
+ </p>
+</div>
+<div class="modal-footer">
+  <input  type ="textbox" ng-model = "message"/>
+<a class="btn btn-success" ng-click="sendMessage(toUser)">Send</a>
+<a  class="btn" data-dismiss="modal" ng-click="hideModel()">Close</a>
+</div>
+
+</div>
+
+
+</section>
+
+

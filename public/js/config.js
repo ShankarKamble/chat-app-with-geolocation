@@ -2,11 +2,8 @@
 angular.module('mean').config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.
-        when('/DealDecks', {
-            templateUrl: 'views/DealDecks/dealDeck.html'
-        }).
-        when('/DealDecks/history', {
-            templateUrl: 'views/DealDecks/history.html'
+        when('/User', {
+            templateUrl: 'views/User/Users.html'
         }).
         when('/', {
             templateUrl: 'views/index.html'

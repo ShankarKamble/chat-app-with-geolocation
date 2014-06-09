@@ -18,6 +18,9 @@ var UserSchema = new Schema({
         type: String,
         unique: true
     },
+    online: Boolean,
+    lat:String,
+    longt:String,
     hashed_password: String,
     provider: String,
     salt: String,
@@ -105,7 +108,7 @@ UserSchema.methods = {
      * @api public
      */
     makeSalt: function() {
-       return crypto.randomBytes(16).toString('base64'); 
+       return crypto.randomBytes(16).toString('base64');
     },
 
     /**

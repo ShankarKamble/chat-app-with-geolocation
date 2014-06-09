@@ -24,3 +24,19 @@ footer p {
     padding:5px 0 12px 10px
 }
 
+.map {
+height: 400px;
+width: 100%;
+}
+
+element.style {
+position: relative;
+overflow: hidden;
+-webkit-transform: translateZ(0px);
+background-color: rgb(229, 227, 223);
+}
+
+.row {
+ margin-right: -15px;
+ margin-left: -15px;
+}

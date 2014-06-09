@@ -1,13 +1,10 @@
-angular.module('dealdeck.system').controller('HeaderController', ['$scope', 'Global', function ($scope, Global) {
+angular.module('UserChat.system').controller('HeaderController', ['$scope', 'Global', function ($scope, Global) {
     $scope.global = Global;
 // Header Menu
     $scope.menu = [{
-        "title": "DealDecks",
-        "link": "DealDecks"
-    }, {
-        "title": "History",
-        "link": "DealDecks/history"
+        "title": "Users",
+        "link": "User"
     }];
-    
+
     $scope.isCollapsed = false;
 }]);

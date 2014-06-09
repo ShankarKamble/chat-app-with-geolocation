@@ -1,4 +1,5 @@
 //AngularJS
+script(type='text/javascript' src='/socket.io/socket.io.js')
 script(type='text/javascript', src='/lib/angular/angular.js')
 script(type='text/javascript', src='/lib/angular-cookies/angular-cookies.js')
 script(type='text/javascript', src='/lib/angular-resource/angular-resource.js')
@@ -8,7 +9,12 @@ script(type='text/javascript', src='/lib/angular-route/angular-route.js')
 script(type='text/javascript', src='/lib/angular-bootstrap/ui-bootstrap.js')
 script(type='text/javascript', src='/lib/angular-bootstrap/ui-bootstrap-tpls.js')
 script(type='text/javascript', src='/lib/angular-ui-utils/modules/route/route.js')
+script(type='text/javascript', src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js')
+script(type='text/javascript', src='/lib/bootstrap/bootstrap.js')
+script(type='text/javascript', src='/lib/ui-map.min.js')
+script(type='text/javascript', src='http://maps.googleapis.com/maps/api/js?sensor=false&.js')
 
+script(type='text/javascript', src='http://www.flocations.com/static/vendor/angular-ui/map/ui-map.min.js')
 //Application Init
 script(type='text/javascript', src='/js/app.js')
 script(type='text/javascript', src='/js/config.js')
@@ -17,10 +23,11 @@ script(type='text/javascript', src='/js/filters.js')
 
 //Application Services
 script(type='text/javascript', src='/js/services/global.js')
-script(type='text/javascript', src='/js/services/DealDecks.js')
+script(type='text/javascript', src='/js/services/User.js')
+script(type='text/javascript', src='/js/services/socket.js')
 
 //Application Controllers
-script(type='text/javascript', src='/js/controllers/DealDecks.js')
+script(type='text/javascript', src='/js/controllers/User.js')
 script(type='text/javascript', src='/js/controllers/index.js')
-script(type='text/javascript', src='/js/controllers/header.js')	
+script(type='text/javascript', src='/js/controllers/header.js')
 script(type='text/javascript', src='/js/init.js')
