@@ -1,10 +1,6 @@
 {
     "name": "UserChat",
     "description": "UserChat: MongoDB, ExpressJS, AngularJS, NodeJS.",
-    "engines": {
-        "node": "0.10.x",
-        "npm": "1.2.x"
-    },
     "dependencies": {
         "express": "*",
         "jade": "latest",
