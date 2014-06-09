@@ -5,13 +5,8 @@
         "node": "0.10.x",
         "npm": "1.2.x"
     },
-    "scripts": {
-        "start": "node node_modules/grunt-cli/bin/grunt",
-        "test": "node node_modules/grunt-cli/bin/grunt test",
-        "postinstall": "bower install"
-    },
     "dependencies": {
-        "express": "latest",
+        "express": "*",
         "jade": "latest",
         "mongoose": "latest",
         "mean-logger": "latest",
@@ -29,9 +24,6 @@
         "view-helpers": "latest",
         "forever": "latest",
         "bower": "latest"
-    },
-    "devDependencies": {
-        "supertest": "latest",
-        "should": "latest"
     }
+
 }
