@@ -27,8 +27,6 @@
         "underscore": "latest",
         "async": "latest",
         "view-helpers": "latest",
-        "forever": "latest",
-        "bower": "latest"
     },
     "devDependencies": {
         "supertest": "latest",
