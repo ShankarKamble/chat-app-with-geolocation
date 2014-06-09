@@ -3,6 +3,7 @@
     "description": "UserChat: MongoDB, ExpressJS, AngularJS, NodeJS.",
     "dependencies": {
         "express": "*",
+        "forever": "*",
         "jade": "latest",
         "mongoose": "latest",
         "mean-logger": "latest",
@@ -19,7 +20,12 @@
         "async": "latest",
         "view-helpers": "latest",
         "forever": "latest",
-        "bower": "latest"
+        "bower": "latest",
+        "socket.io": "latest",
+         "should": "latest",
+          "supertest": "latest"          ,
+          "underscore": "latest"
+
     }
 
 }
