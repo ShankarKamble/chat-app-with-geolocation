@@ -43,7 +43,7 @@
 <div id="example" class="modal fade in" ng-show ="isUserPresent == true">
 
 <div class="modal-body">
-
+<p><b>{{toUser}}</b></p>
 <p ng-repeat='message in messages',
       ng-class='{alert: message.user == "alert"}'>
        {{message.user}}: {{message.text}}

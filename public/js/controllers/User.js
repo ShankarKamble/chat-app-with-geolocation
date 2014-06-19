@@ -25,7 +25,8 @@ angular.module('UserChat.User').controller('UserChatsController', [
 
         socket.on('send:message', function (message) {
 
-            if ($scope.global.user.name === message.user || $scope.toUser === message.user || $scope.global.user.name === message.touser || $scope.toUser === message.touser) {
+            if ( $scope.global.user.name === message.touser ) {
+                $scope.toUser = message.user;
                 $scope.isUserPresent = true;
                 $scope.messages.push({
                     user: message.user,
