@@ -3,6 +3,16 @@
     "description": "UserChat: MongoDB, ExpressJS, AngularJS, NodeJS.",
     "dependencies": {
         "express": "*",
+        "cookie-parser": "*",
+        "body-parser": "*",
+        "static-favicon": "*",
+         "method-override": "*",
+          "compression": "*",
+          "morgan": "*",
+           "logger": "*",
+
+
+        "express-session":"*",
         "forever": "*",
         "jade": "latest",
         "mongoose": "latest",

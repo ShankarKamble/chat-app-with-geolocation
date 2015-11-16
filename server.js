@@ -4,7 +4,7 @@
 var express = require('express'),
     fs = require('fs'),
     passport = require('passport'),
-    logger = require('mean-logger'),
+    logger = require('logger'),
     http = require('http');
 
 
@@ -46,10 +46,33 @@ require('./config/passport')(passport);
 var app = express();
 
 //express settings
-require('./config/express')(app, passport, db);
+require('./config/express')(app, passport, mongoose);
 
 //Bootstrap routes
 require('./config/routes')(app, passport, auth);
+
+ //Assume "not found" in the error msgs is a 404. this is somewhat silly, but valid, you can do whatever you like, set properties, use instanceof etc.
+
+app.use(function(err, req, res, next) {
+            //Treat as 404
+            if (~err.message.indexOf('not found')) return next();
+
+            //Log it
+            console.error(err.stack);
+
+            //Error page
+            res.status(500).render('500', {
+                error: err.stack
+            });
+        });
+
+//Assume 404 since no middleware responded
+app.use(function(req, res, next) {
+    res.status(404).render('404', {
+        url: req.originalUrl,
+        error: 'Not found'
+    });
+});
 
 //Start the app by listening on <port>
 var port = process.env.PORT || config.port;
@@ -58,7 +81,7 @@ var port = process.env.PORT || config.port;
 console.log('Express app started on port ' + port);
 //server = http.createServer(app)
 //Initializing logger
-logger.init(app, passport, mongoose);
+//logger.init(app, passport, mongoose);
 server = app.listen(port);
 
 var io = require('socket.io').listen(server);

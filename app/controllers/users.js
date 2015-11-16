@@ -16,6 +16,7 @@ exports.authCallback = function(req, res, next) {
  * Show login form
  */
 exports.signin = function(req, res) {
+    
     res.render('users/signin', {
         title: 'Signin',
         message: req.flash('error')
@@ -46,7 +47,9 @@ exports.signout = function(req, res) {
  * Session
  */
 exports.session = function(req, res) {
+    console.log(req.user)
     req.user.online = true;
+    console.log(req.user)
     exports.update(req.user)
     res.redirect('/#!/User');
 };
