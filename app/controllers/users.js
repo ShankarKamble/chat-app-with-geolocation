@@ -16,7 +16,7 @@ exports.authCallback = function(req, res, next) {
  * Show login form
  */
 exports.signin = function(req, res) {
-    
+
     res.render('users/signin', {
         title: 'Signin',
         message: req.flash('error')
@@ -47,9 +47,7 @@ exports.signout = function(req, res) {
  * Session
  */
 exports.session = function(req, res) {
-    console.log(req.user)
     req.user.online = true;
-    console.log(req.user)
     exports.update(req.user)
     res.redirect('/#!/User');
 };
@@ -112,12 +110,14 @@ exports.user = function(req, res, next, id) {
  * List of User
  */
 exports.all = function(req, res) {
-    User.find().exec(function(err, UserChats) {
+
+    User.find({email: {'$ne':req.user.email }}).exec(function(err, UserChats) {
         if (err) {
             res.render('error', {
                 status: 500
             });
         } else {
+            
             res.jsonp(UserChats);
         }
     });

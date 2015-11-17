@@ -178,3 +178,35 @@ angular.module('UserChat.User').controller('UserChatsController', [
 
     }
 ]);
+
+
+
+angular.module('UserChat.User').controller('ContactController', [
+    '$scope', '$routeParams', '$location', 'Global', 'Contact', '$http','$timeout',
+    function ($scope, $routeParams, $location, Global, Contact, $http, $timeout) {
+        // Initailize varable
+        $scope.global = Global;
+        $scope.getAllUsers = function () {
+            Contact.getAllContact().then(function (contact) {
+                $scope.Users = contact;
+            });
+        };
+
+
+       
+       
+
+        $scope.updateUserDeatails = function (info) {
+            $scope.global.user.longt = info.long;
+            $scope.global.user.lat = info.lat;
+            $http.post('users/update', {
+                'user': $scope.global.user
+            });
+        }
+      
+       
+
+
+
+    }
+]);

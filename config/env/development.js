@@ -1,7 +1,7 @@
 module.exports = {
-     db:"mongodb://localhost/userchat-dev",
+     db:"mongodb://localhost/meandemo",
     app: {
-        name: "User Chat (Shankar Kamble)"
+        name: "Mean Demo (Shankar Kamble)"
     }
 
 }

@@ -26,14 +26,13 @@ module.exports = function(app, passport, auth) {
 
     app.get('/User', users.all);
 
+    app.get('/getContacts', users.all);
+
     //Finish with setting up the UserChatsId param
   //  app.param('UserChatsId', User.UserChatsId);
 
     //Home route
     var index = require('../app/controllers/index');
     app.get('/', index.render);
-
-
-    
 
 };
