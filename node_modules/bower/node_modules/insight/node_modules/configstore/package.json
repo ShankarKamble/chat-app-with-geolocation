@@ -1,0 +1,61 @@
+{
+  "name": "configstore",
+  "version": "1.2.1",
+  "description": "Easily load and save config without having to think about where and how",
+  "keywords": [
+    "conf",
+    "config",
+    "configuration",
+    "settings",
+    "store",
+    "editable",
+    "json",
+    "data",
+    "persist",
+    "persistent",
+    "save"
+  ],
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yeoman/configstore.git"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "graceful-fs": "^4.1.2",
+    "mkdirp": "^0.5.0",
+    "object-assign": "^3.0.0",
+    "os-tmpdir": "^1.0.0",
+    "osenv": "^0.1.0",
+    "uuid": "^2.0.1",
+    "write-file-atomic": "^1.1.2",
+    "xdg-basedir": "^2.0.0"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "path-exists": "^1.0.0"
+  },
+  "files": [
+    "index.js"
+  ],
+  "readme": "# configstore [![Build Status](https://secure.travis-ci.org/yeoman/configstore.svg?branch=master)](http://travis-ci.org/yeoman/configstore)\n\n> Easily load and persist config without having to think about where and how\n\nConfig is stored in a JSON file located in `$XDG_CONFIG_HOME` or `~/.config`. Eg: `~/.config/configstore/some-id.json`\n\n\n## Usage\n\n```js\nvar Configstore = require('configstore');\nvar pkg = require('./package.json');\n\n// Init a Configstore instance with an unique ID eg. package name\n// and optionally some default values\nvar conf = new Configstore(pkg.name, {foo: 'bar'});\n\nconf.set('awesome', true);\nconsole.log(conf.get('awesome'));  // true\nconsole.log(conf.get('foo'));      // bar\n\nconf.del('awesome');\nconsole.log(conf.get('awesome'));  // undefined\n```\n\n\n## API\n\n### .set(key, value)\n\nSet an item.\n\n### .get(key)\n\nGet an item.\n\n### .del(key)\n\nDelete an item.\n\n### .clear()\n\nDelete all items.\n\n### .all\n\nGet all items as an object or replace the current config with an object:\n\n```js\nconf.all = {\n\thello: 'world'\n};\n```\n\n### .size\n\nGet the item count.\n\n### .path\n\nGet the path to the config file. Can be used to show the user where the config file is located or even better open it for them.\n\n\n## License\n\n[BSD license](http://opensource.org/licenses/bsd-license.php)  \nCopyright Google\n",
+  "readmeFilename": "readme.md",
+  "bugs": {
+    "url": "https://github.com/yeoman/configstore/issues"
+  },
+  "homepage": "https://github.com/yeoman/configstore#readme",
+  "_id": "configstore@1.2.1",
+  "_shasum": "00ad402c0dba027bd8b4b7228dc7d42cefe3c81a",
+  "_resolved": "https://registry.npmjs.org/configstore/-/configstore-1.2.1.tgz",
+  "_from": "https://registry.npmjs.org/configstore/-/configstore-1.2.1.tgz"
+}
