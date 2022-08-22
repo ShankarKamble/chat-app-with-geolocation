@@ -65,7 +65,7 @@ After a file is uploaded and data processing is completed, Download button will 
 
 3) PARALLELISM -  Apllication will work through the rows in parallel. PARALLELREQUEST Number of records from excel will used to get records from NPPES in parallel.
 
-Below is the table, show the time taken by upload the file, data processing and create output file for all records of excel.   
+Below is the table, show the time taken by upload api for all records of excel.   
 
 PARALLELREQUEST              | 10    | 20    | 30    | 40    | 50    | 
 ---                          | ---   | ---   | ---   | ---   | ---   |
