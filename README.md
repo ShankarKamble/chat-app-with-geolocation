@@ -57,13 +57,13 @@ PARALLELREQUEST : Needed to implement PARALLELISM. Number of records from excel 
 
 LOG_LEVEL : Set log level  of application by default is info. For debug mode set LOG_LEVEL=debug
 
-2)UI -  Used bootstrap 5 , Jquery. Sample excel with correct format , worksheet name and column names can be downloaded in UI. 
+2) UI -  Used bootstrap 5 , Jquery. Sample excel with correct format , worksheet name and column names can be downloaded in UI. 
 
 Please upload the excel file with data in the required format same as samole excel sheet file.
 
 After a file is uploaded and data processing is completed, Download button will be enabled to download the output report file.
 
-3)PARALLELISM -  Apllication will work through the rows in parallel. PARALLELREQUEST Number of records from excel will used to get records from NPPES in parallel.
+3) PARALLELISM -  Apllication will work through the rows in parallel. PARALLELREQUEST Number of records from excel will used to get records from NPPES in parallel.
 
 Below is the table, show the time taken by upload the file, data processing and create output file for all records of excel.   
 
