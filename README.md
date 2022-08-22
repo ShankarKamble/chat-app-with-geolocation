@@ -71,18 +71,21 @@ Completed in Seconds         | 63-66 | 60-63 | 55-58 | 52-55 | 48-53 |
 4) If error occurs like listen EADDRINUSE: address already in use :::5000 
 
    ```
-  Error: listen EADDRINUSE: address already in use :::5000
-    at Server.setupListenHandle [as _listen2] (node:net:1372:16)
-    at listenInCluster (node:net:1420:12)
-    at Server.listen (node:net:1508:7 
- ```
+      Error: listen EADDRINUSE: address already in use :::5000
+      at Server.setupListenHandle [as _listen2] (node:net:1372:16)
+      at listenInCluster (node:net:1420:12)
+      at Server.listen (node:net:1508:7 
+  ```
  
     then  please kill the process of PORT 5000 using below 
+    
+    
     ```
     sudo lsof -i :5000 , 
     ```
     COMMAND PID USER FD TYPE DEVICE SIZE/OFF NODE NAME
     node 20152 abc 21u IPv6 195004 0t0 TCP *:http (LISTEN)
+    
     ```
     sudo kill -9 20152
     ```
