@@ -52,7 +52,9 @@ export NPPES_URL="https://npiregistry.cms.hhs.gov/api/?version=2.1&limit=200" PO
 NPPES_URL :  URL NPPES API with version. limit 200 ,means max 200 records will received from NPPES
 
 PORT : Apllication will run on this port
+
 PARALLELREQUEST : Needed to implement PARALLELISM. Number of records from excel will used to get records from NPPES in parallel. e,g PARALLELREQUEST=50 - 
+
 LOG_LEVEL : Set log level  of application by default is info. For debug mode set LOG_LEVEL=debug
 
 2)UI -  Used bootstrap 5 , Jquery. Sample excel with correct format , worksheet name and column names can be downloaded in UI. 
