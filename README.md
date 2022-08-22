@@ -25,7 +25,7 @@ lint
 
 ```
 npm run lint
-``
+```
 
 ## Available data
 
